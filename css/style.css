@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-brand .logo {
+  height: 40px;
+}
+
+.navbar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-menu li a:hover {
+  color: #fff;
+}
+
+.btn-main {
+  padding: 10px 20px;
+  background-color: #f4b400;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-main:hover {
+  background-color: #e1a400;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  z-index: 1100;
+}
+
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar-menu {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 350%;
+    background-color: #000;
+    padding-top: 60px;
+    text-align: left;
+    transition: right 0.3s ease;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .btn-main {
+    display: none;
+  }
+
+  /* Adjust z-index to ensure the navbar is over other content */
+  .navbar-menu.active ~ .content,
+  .navbar-menu.active ~ .footer {
+    z-index: -1;
+  }
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.container h1 {
+  color: #f4b400;
+}
+
+.container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.container button,
+.container .claim-button {
+  padding: 10px 20px;
+  background-color: #f4b400;
+  color: #000;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container button:hover,
+.container .claim-button:hover {
+  background-color: #e1a400;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .btn-main {
+    display: none;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-logo img {
+  height: 100px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: #777;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-logo img {
+    height: 50px;
+  }
+}
